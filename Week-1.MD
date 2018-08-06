@@ -186,6 +186,15 @@ The element content is: `My first paragraph`.
 HTML tags are not case sensitive: `<P>` means the same as `<p>`, **but** we recommends lowercase in HTML. Moreover, later React JavaScript library syntax will make us to use lowercase for standard in-browser tags anyway.
 
 
+### HTML Comments
+One more thing about HTML is comments. Comments embeds in document like so:
+```html
+  <!-- This is a comment -->
+  <p>This is a paragraph.</p>
+  <!-- Remember to add more information here -->
+```
+
+> Comments are not displayed by the browser, but they can help document your HTML source code. Comments stay intact in web page source code.
 
 ## HTML Attributes
 
@@ -209,14 +218,146 @@ HTML images are defined with the `<img>` tag. The filename of the image source i
 ```
 
 Styling with attributes:
-The style attribute is used to specify the styling of an element, like color, font, size etc.
+The style attribute is used to specify the styling of an element, like color, font, size etc.:
 ```html
-  <p style="color:red">I am a paragraph</p>
+  <p style="color:red;">I am a red paragraph</p>
 ```
+> We will learn more about CSS later in this course.
+
 
 **Summary**: Each tag have it's own attributes. Some of them are optinal (like `style`), some are mandatory (like `src` on `<img>` tag). Attributes allow specify element representation and behaviour.
 
 Detailed attributes reference could be found at [W3School HTML Attribute Reference](https://www.w3schools.com/tags/ref_attributes.asp) page.
+
+
+
+## Styling with CSS
+CSS stands for Cascading Style Sheets. It describes how HTML elements are to be displayed on screen, paper, or in other media.
+
+CSS can be added to HTML elements in 3 ways:
+
+* **Inline** - by using the style attribute in HTML elements
+* **Internal** - by using a `<style>` element in the `<head>` section
+* **External** - by using an external CSS file
+
+The most common way to add CSS, is to keep the styles in separate CSS files. However, here we will use inline and internal styling, because this is easier to demonstrate, and easier for you to try it yourself.
+
+### Inline CSS
+An inline CSS is used to apply a unique style to a single HTML element with use of `style` attribute of an HTML element:
+```html
+  <h1 style="color:blue;">This is a Blue Heading</h1>
+```
+
+### Internal CSS
+An internal CSS is used to define a style for a single HTML page and defined in the `<head>` section of an HTML page, within a `<style>` element:
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {background-color: powderblue;}
+h1   {color: blue;}
+p    {color: red;}
+</style>
+</head>
+<body>
+
+<h1>This is a heading</h1>
+<p>This is a paragraph.</p>
+
+</body>
+</html>
+```
+
+### External CSS
+An external style sheet is used to define the style for many HTML pages.
+
+To use an external style sheet we should add a link to it in the `<head>` section of the HTML page:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+  
+    <link rel="stylesheet" href="styles.css">
+	
+  </head>
+  <body>
+    <h1>This is a heading</h1>
+    <p>This is a paragraph.</p>
+  </body>
+</html>
+```
+
+An external style sheet can be written in any text editor. The file must not contain any HTML code, and must be saved with a `.css` extension.
+
+Here is how the `styles.css` looks:
+
+```css
+body {
+  background-color: powderblue;
+}
+h1 {
+  color: blue;
+}
+p {
+  color: red;
+}
+```
+
+
+### The id Attribute
+To define a specific style for one special element, add an id attribute to the element:
+
+```html
+<p id="p01">I am different</p>
+```
+
+then define a style for the element with the specific id:
+
+```css
+#p01 {
+  color: blue;
+}
+```
+
+
+### The class Attribute
+To define a style for special types of elements, add a class attribute to the element:
+
+```html
+  <p class="error">I am different</p>
+```
+then define a style for the elements with the specific class:
+
+```css
+p.error {
+  color: red;
+}
+```
+
+or more generally 
+```css
+.error {
+  color: red;
+}
+```
+
+> We recommend prefer class attributes over element or id css selectors. 
+
+Details about css syntax and selectors could be found at [CSS Syntax and Selectors](https://www.w3schools.com/css/css_syntax.asp) guide.
+
+Insights and ideas on webpage elements hierarchy, semantic layout and styling could be found in [BEM methodology](https://en.bem.info/methodology/quick-start/)
+
+
+
+
+
+### Selectors
+**Note**: here in Internal and External CSS examples we use `selectors` syntax, which allows us to apply certain styling rules like `color` on multiple elements. To specify which elements should receive the rule in this example we specify tags, which will be used as filtering rule. E.g.: `h1   {color: blue;}` rule will select all `h1` elements on the page and make them blue. 
+
+Besides `tag`/`element` selectors there is also `class` selectors, `id` selectors, `attribute` selectors and their combinations. For further reading about selectors please note [CSS Selector Reference](https://www.w3schools.com/cssref/css_selectors.asp).
 
 
 
