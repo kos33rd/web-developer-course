@@ -76,11 +76,15 @@ Using semantic markup is an important aspect of modern web development because i
 It also helps you as a developer keep your site organized, which, in turn, makes it easier to maintain.
 
 ![Semantic markup](./Week-1/semantic-page.png)
+
 *Here is correct semantic HTML markup*
 
 
 ![Non-semantic markup](./Week-1/non-semantic-page.png)
-*![Don't do like this](./common/dislike.png)  And it's evil twin - non-semantic markup*
+
+![Don't do like this](./common/dislike.png)
+
+*And it's evil twin - non-semantic markup*
 
 -------
 ### Soucres:
