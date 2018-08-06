@@ -56,6 +56,8 @@ Elements could be nested and therefore form hierarchical structure. This structu
 * The `<h1>` element defines a large heading
 * The `<p>` element defines a paragraph
 
+Let's save our web page as `index.html` and open it in Google Chrome browser:
+
 ![Screenshot of browser with rendered HTML](/Week-1/webpage.png)
 
 *Result*
@@ -86,7 +88,31 @@ It also helps you as a developer keep your site organized, which, in turn, makes
 
 *And it's evil twin - non-semantic markup*
 
+
+## Write HTML
+
+Within the course we recommend using professional IDE like WebStorm, IntelliJ IDEA, Atom or VS Code,
+but it's OK to use lightweight text editors in such simple cases like above.
+
+Files, containing HTML, have `.html` or `.htm` extension.
+A common filename for web application entry point is `index.html`.
+When browser requests a URL that points to a directory structure instead of an actual web page, web server will generally serve a default (index) page.
+
+For example, if you'll open in your browser URL like `http://localhost/`, web server will give you content of `index.html` file, located in your web server root directory,
+so content of this page will be equivalent to `http://localhost/index.html`.
+
+Last thing about html files: we recommend using UTF-8 encoding when saving files.
+This charset is universal way to code and maintain multilingual applications without headache about web server configuration and third-party libs interoperability.
+
+
+
 -------
 ### Soucres:
 * [W3School HTML Introduction](https://www.w3schools.com/htmL/html_intro.asp)
 * [Semantic HTML](https://internetingishard.com/html-and-css/semantic-html/)
+
+
+
+
+
+
