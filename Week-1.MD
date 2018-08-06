@@ -248,27 +248,32 @@ An inline CSS is used to apply a unique style to a single HTML element with use 
   <h1 style="color:blue;">This is a Blue Heading</h1>
 ```
 
+![Inline styled element](./Week-1/inline-styled.png)
+
+
+
 ### Internal CSS
 An internal CSS is used to define a style for a single HTML page and defined in the `<head>` section of an HTML page, within a `<style>` element:
 
 ```html
 <!DOCTYPE html>
 <html>
-<head>
-<style>
-body {background-color: powderblue;}
-h1   {color: blue;}
-p    {color: red;}
-</style>
-</head>
-<body>
-
-<h1>This is a heading</h1>
-<p>This is a paragraph.</p>
-
-</body>
+  <head>
+    <style>
+      body {background-color: powderblue;}
+      h1   {color: blue;}
+      p    {color: red;}
+    </style>
+  </head>
+  <body>
+    <h1>This is a heading</h1>
+    <p>This is a paragraph.</p>
+  </body>
 </html>
 ```
+
+![Externally styled element](./Week-1/externally-styled.png)
+
 
 ### External CSS
 An external style sheet is used to define the style for many HTML pages.
@@ -306,6 +311,7 @@ p {
 }
 ```
 
+Result of this case is identical to Internal CSS example.
 
 ### The id Attribute
 To define a specific style for one special element, add an id attribute to the element:
@@ -346,7 +352,11 @@ or more generally
 
 > We recommend prefer class attributes over element or id css selectors. 
 
-Details about css syntax and selectors could be found at [CSS Syntax and Selectors](https://www.w3schools.com/css/css_syntax.asp) guide.
+
+### Selectors
+**Note**: here in Internal and External CSS examples we use `selectors` syntax, which allows us to apply certain styling rules like `color` on multiple elements. To specify which elements should receive the rule in this example we specify tags, which will be used as filtering rule. E.g.: `h1   {color: blue;}` rule will select all `h1` elements on the page and make them blue. 
+
+Besides `tag`/`element` selectors there is also `class` selectors, `id` selectors, `attribute` selectors and their combinations. For further reading and detailed explanation about selectors please take a note at [CSS Selector Reference](https://www.w3schools.com/cssref/css_selectors.asp) and [CSS Syntax and Selectors](https://www.w3schools.com/css/css_syntax.asp) guide.
 
 Insights and ideas on webpage elements hierarchy, semantic layout and styling could be found in [BEM methodology](https://en.bem.info/methodology/quick-start/)
 
@@ -354,10 +364,6 @@ Insights and ideas on webpage elements hierarchy, semantic layout and styling co
 
 
 
-### Selectors
-**Note**: here in Internal and External CSS examples we use `selectors` syntax, which allows us to apply certain styling rules like `color` on multiple elements. To specify which elements should receive the rule in this example we specify tags, which will be used as filtering rule. E.g.: `h1   {color: blue;}` rule will select all `h1` elements on the page and make them blue. 
-
-Besides `tag`/`element` selectors there is also `class` selectors, `id` selectors, `attribute` selectors and their combinations. For further reading about selectors please note [CSS Selector Reference](https://www.w3schools.com/cssref/css_selectors.asp).
 
 
 
