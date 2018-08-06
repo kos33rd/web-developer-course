@@ -19,16 +19,16 @@ HTML 4.01| 1999
 XHTML    | 2000
 **HTML5**| 2014
 
-Let's take a look at simple example of HTML element
+Let's take a look at simple example of HTML element:
 
 ```html
 <article>My First HTML Element</article>
 ```
-HTML tags label pieces of content such as "heading", "paragraph", "table", and so on
+HTML tags label pieces of content such as "heading", "paragraph", "table", and so on.
 Browsers do not display the HTML tags, but use them to render the content of the page
 
-HTML tags normally come in pairs like `<p>` and `</p>`
-The first tag in a pair is the start (opening) tag, the second tag is the end (closing) tag
+HTML tags normally come in pairs like `<p>` and `</p>`.
+The first tag in a pair is the start (opening) tag, the second tag is the end (closing) tag.
 
 ## Web page structure
 
@@ -48,15 +48,15 @@ Elements could be nested and therefore form hierarchical structure. This structu
 </html>
 ```
 
-* The `<!DOCTYPE html>` declaration defines this document to be HTML5 (special case of non-self-closing single tag)
-* The `<html>` element is the root element of an HTML page
-* The `<head>` element contains meta information about the document
-* The `<title>` element specifies a title for the document
-* The `<body>` element contains the visible page content
-* The `<h1>` element defines a large heading
-* The `<p>` element defines a paragraph
+* The `<!DOCTYPE html>` declaration defines this document to be HTML5 (special case of non-self-closing single tag);
+* The `<html>` element is the root element of an HTML page;
+* The `<head>` element contains meta information about the document;
+* The `<title>` element specifies a title for the document;
+* The `<body>` element contains the visible page content;
+* The `<h1>` element defines a large heading;
+* The `<p>` element defines a paragraph.
 
-Let's save our web page as `index.html` and open it in Google Chrome browser:
+Let's save our web page markup as `index.html` file and open it in Google Chrome browser:
 
 ![Screenshot of browser with rendered HTML](/Week-1/webpage.png)
 
@@ -65,7 +65,7 @@ Let's save our web page as `index.html` and open it in Google Chrome browser:
 
 ## HTML page semantics
 
-Below is a visualization of an HTML page structure:
+Below is a visualization of our HTML page structure:
 
 ![HTML page structure](./Week-1/structure.png)
 
@@ -124,13 +124,112 @@ Full list of avaliable HTML tags could be found at [W3School HTML Element Refere
 
 ## Into elements
 
-// TBD
+An HTML element usually consists of a start tag and end tag, with the content inserted in between:
+
+```html
+  <tagname>Content goes here...</tagname>
+```
+
+The HTML element is everything from the start tag to the end tag:
+```
+  <p>My first paragraph.</p>
+```
+
+Start tag | Element content     | End tag
+----------|---------------------|--------
+`<h1>`    | My First Heading    | `</h1>`
+`<p>`     | My first paragraph. | `</p>`
+`<br>`    |                     |
+
+> HTML elements with no content are called empty elements. Empty elements do not have an end tag, such as the <br> element (which indicates a line break).
+  
+### Nested HTML Elements
+HTML elements can be nested (elements can contain elements).
+    
+All HTML documents consist of nested HTML elements.
+    
+This example contains four HTML elements:
+
+```html
+<!DOCTYPE html>
+<html>
+  <body>
+
+  <h1>My First Heading</h1>
+  <hr />
+  <p>My first paragraph.</p>
+
+  </body>
+</html>
+```
+
+The `<html>` element defines the whole document.
+
+It has a start tag `<html>` and an end tag `</html>`.
+
+The element content is another HTML element (the `<body>` element).
+
+The `<body>` element defines the document body.
+
+It has a start tag `<body>` and an end tag `</body>`.
+
+The element content is two other HTML elements (`<h1>` and `<p>`).
+
+The `<h1>` element defines a heading.
+
+It has a start tag `<h1>` and an end tag `</h1>`.
+
+The element content is: `My First Heading`.
+
+The element `<hr />` represents horizontal ruler and have no contend (it's just a horizontal divider). 
+
+The `<p>` element defines a paragraph.
+
+It has a start tag `<p>` and an end tag `</p>`.
+
+The element content is: `My first paragraph`.
+
+### Use Lowercase Tags
+HTML tags are not case sensitive: <P> means the same as <p>, **but** we recommends lowercase in HTML. Moreover, later React JavaScript library syntax will make us to use lowercase for standard in-browser tags.
 
 
+
+
+## HTML Attributes
+
+Attributes provide additional information about HTML elements.
+
+* All HTML elements can have attributes
+* Attributes provide additional information about an element
+* Attributes are always specified in the start tag
+* Attributes usually come in name/value pairs like: name="value"
+
+Example:
+HTML links are defined with the <a> tag. The link address is specified in the href attribute:
+```html
+  <a href="https://www.google.com">This is a link</a>
+```
+
+One more example:
+HTML images are defined with the <img> tag. The filename of the image source is specified in the src attribute:
+```html
+  <img src="img_girl.jpg">
+```
+
+Styling with attributes:
+The style attribute is used to specify the styling of an element, like color, font, size etc.
+```html
+  <p style="color:red">I am a paragraph</p>
+```
+
+**Summary**: Each tag have it's own attributes. Some of them are optinal (like `style`), some are mandatory (like `src` on `<img>` tag). Attributes allow specify element representation and behaviour.
+
+Detailed attributes reference could be found at (W3School HTML Attribute Reference)[https://www.w3schools.com/tags/ref_attributes.asp] page.
 
 
 
 -------
+
 ### Soucres:
 * [W3School HTML Introduction](https://www.w3schools.com/htmL/html_intro.asp)
 * [Semantic HTML](https://internetingishard.com/html-and-css/semantic-html/)
