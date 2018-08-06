@@ -365,6 +365,17 @@ Insights and ideas on webpage elements hierarchy, semantic layout and styling co
 
 
 
+## HTML JavaScript
+
+JavaScript makes HTML pages more dynamic and interactive.
+
+The `<script>` tag is used to define a client-side script (JavaScript).
+
+The `<script>` element either contains scripting statements, or it points to an external script file through the src attribute.
+
+
+// TBD
+
 
 
 -------
