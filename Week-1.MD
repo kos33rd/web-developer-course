@@ -163,35 +163,27 @@ This example contains four HTML elements:
 </html>
 ```
 
-The `<html>` element defines the whole document.
-
+* The `<html>` element defines the whole document.
 It has a start tag `<html>` and an end tag `</html>`.
 
-The element content is another HTML element (the `<body>` element).
-
+* The element content is another HTML element (the `<body>` element).
 The `<body>` element defines the document body.
-
 It has a start tag `<body>` and an end tag `</body>`.
 
-The element content is two other HTML elements (`<h1>` and `<p>`).
+* The element content is two other HTML elements (`<h1>` and `<p>`).
 
-The `<h1>` element defines a heading.
-
+* The `<h1>` element defines a heading.
 It has a start tag `<h1>` and an end tag `</h1>`.
-
 The element content is: `My First Heading`.
 
-The element `<hr />` represents horizontal ruler and have no contend (it's just a horizontal divider). 
+* The element `<hr />` represents horizontal ruler and have no contend (it's just a horizontal divider). 
 
-The `<p>` element defines a paragraph.
-
+* The `<p>` element defines a paragraph.
 It has a start tag `<p>` and an end tag `</p>`.
-
 The element content is: `My first paragraph`.
 
 ### Use Lowercase Tags
-HTML tags are not case sensitive: <P> means the same as <p>, **but** we recommends lowercase in HTML. Moreover, later React JavaScript library syntax will make us to use lowercase for standard in-browser tags.
-
+HTML tags are not case sensitive: `<P>` means the same as `<p>`, **but** we recommends lowercase in HTML. Moreover, later React JavaScript library syntax will make us to use lowercase for standard in-browser tags anyway.
 
 
 
@@ -205,13 +197,13 @@ Attributes provide additional information about HTML elements.
 * Attributes usually come in name/value pairs like: name="value"
 
 Example:
-HTML links are defined with the <a> tag. The link address is specified in the href attribute:
+HTML links are defined with the `<a>` tag. The link address is specified in the href attribute:
 ```html
   <a href="https://www.google.com">This is a link</a>
 ```
 
 One more example:
-HTML images are defined with the <img> tag. The filename of the image source is specified in the src attribute:
+HTML images are defined with the `<img>` tag. The filename of the image source is specified in the src attribute:
 ```html
   <img src="img_girl.jpg">
 ```
@@ -224,7 +216,7 @@ The style attribute is used to specify the styling of an element, like color, fo
 
 **Summary**: Each tag have it's own attributes. Some of them are optinal (like `style`), some are mandatory (like `src` on `<img>` tag). Attributes allow specify element representation and behaviour.
 
-Detailed attributes reference could be found at (W3School HTML Attribute Reference)[https://www.w3schools.com/tags/ref_attributes.asp] page.
+Detailed attributes reference could be found at [W3School HTML Attribute Reference](https://www.w3schools.com/tags/ref_attributes.asp) page.
 
 
 
