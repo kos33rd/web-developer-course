@@ -3,11 +3,12 @@
 ## What is HTML?
 HTML is the standard markup language for creating Web pages.
 
-HTML stands for Hyper Text Markup Language
-HTML describes the structure of Web pages using XML markup
-HTML elements are the building blocks of HTML pages
-HTML elements are represented by tags
-There is many historical revisions of HTML standard, but we will focus on latest and actual HTML5 specification
+- HTML stands for Hyper Text Markup Language;
+- HTML describes the structure of Web pages using XML markup;
+- HTML elements are the building blocks of HTML pages;
+- HTML elements are represented by tags.
+
+There is many historical revisions of HTML standard, but we will focus on latest and actual HTML5 specification.
 
 Version	 | Year
 ---------|-----
@@ -60,15 +61,26 @@ Elements could be nested and therefore form hierarchical structure. This structu
 *Result*
 
 
-## Web page semantics
+## HTML page semantics
 
-// TBD
+Below is a visualization of an HTML page structure:
 
+![HTML page structure](./Week-1/structure.png)
 
+> Note: Only the content inside the <body> section (the white area above) is displayed in a browser.
 
+Keep in mind: HTML at first represents semantic srtucture of document, not it's appearance. 
+"Semantic HTML" refers to the idea that all your HTML markup should convey the underlying meaning of your content.
 
+Using semantic markup is an important aspect of modern web development because it makes it easier for search engines, screen readers, and other machines to identify the different parts of your website. 
+It also helps you as a developer keep your site organized, which, in turn, makes it easier to maintain.
 
+*Here is correct semantic HTML markup*
 
+![Semantic markup](./Week-1/semantic-page.png)
+
+*And it's evil twin - non-semantic markup (don't do this)*
+![Non-semantic markup](./Week-1/non-semantic-page.png)
 
 
 -------
