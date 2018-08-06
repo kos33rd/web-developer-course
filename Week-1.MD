@@ -37,31 +37,32 @@ Elements could be nested and therefore form hierarchical structure. This structu
 ```html
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Page Title</title>
-	</head>
-	<body>
-		<h1>My First Heading</h1>
-		<p>My first paragraph.</p>
-	</body>
+  <head>
+    <title>Page Title</title>
+  </head>
+  <body>
+    <h1>My First Heading</h1>
+    <p>My first paragraph.</p>
+  </body>
 </html>
 ```
 
-* The <!DOCTYPE html> declaration defines this document to be HTML5 (special case of non-self-closing single tag)
-* The <html> element is the root element of an HTML page
-* The <head> element contains meta information about the document
-* The <title> element specifies a title for the document
-* The <body> element contains the visible page content
-* The <h1> element defines a large heading
-* The <p> element defines a paragraph
+* The `<!DOCTYPE html>` declaration defines this document to be HTML5 (special case of non-self-closing single tag)
+* The `<html>` element is the root element of an HTML page
+* The `<head>` element contains meta information about the document
+* The `<title>` element specifies a title for the document
+* The `<body>` element contains the visible page content
+* The `<h1>` element defines a large heading
+* The `<p>` element defines a paragraph
 
-*Here is result*
 ![Screenshot of browser with rendered HTML](/Week-1/webpage.png)
 
+*Result*
 
 
 ## Web page semantics
 
+// TBD
 
 
 
@@ -69,3 +70,7 @@ Elements could be nested and therefore form hierarchical structure. This structu
 
 
 
+
+-------
+### Soucres:
+* [W3School HTML Introduction](https://www.w3schools.com/htmL/html_intro.asp)
