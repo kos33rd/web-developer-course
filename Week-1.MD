@@ -93,16 +93,40 @@ It also helps you as a developer keep your site organized, which, in turn, makes
 
 Within the course we recommend using professional IDE like WebStorm, IntelliJ IDEA, Atom or VS Code,
 but it's OK to use lightweight text editors in such simple cases like above.
+Essential requirement for HTML text editor are HTML syntax highlight and UTF-8 support.
+
 
 Files, containing HTML, have `.html` or `.htm` extension.
 A common filename for web application entry point is `index.html`.
-When browser requests a URL that points to a directory structure instead of an actual web page, web server will generally serve a default (index) page.
+When browser requests a URL that points to a directory structure instead of an actual web page, web server will generally serve this default (index) page.
 
 For example, if you'll open in your browser URL like `http://localhost/`, web server will give you content of `index.html` file, located in your web server root directory,
 so content of this page will be equivalent to `http://localhost/index.html`.
 
 Last thing about html files: we recommend using UTF-8 encoding when saving files.
 This charset is universal way to code and maintain multilingual applications without headache about web server configuration and third-party libs interoperability.
+
+## HTML Document
+
+As we saw before, all HTML documents must start with a document type declaration: `<!DOCTYPE html>`.
+
+The HTML document itself begins with `<html>` and ends with `</html>`.
+
+The `<head>` section contains meta information about page and additional non-visualizable data.
+Some of useful tags within head tag includes `<meta>`, `<script>`, `<style>` and `<title>`.
+
+The visible part of the HTML document is between `<body>` and `</body>`.
+There is various amount of "presentational" tags, which could be used inside of body.
+
+Some of them: `<span>`, `<img>`, `<table>`, `<video>`, `<input>`, `<button>`.
+
+Full list of avaliable HTML tags could be found at [W3School HTML Element Reference page](https://www.w3schools.com/tags/ref_byfunc.asp).
+
+## Into elements
+
+// TBD
+
+
 
 
 
