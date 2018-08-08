@@ -77,17 +77,15 @@ Keep in mind: HTML at first represents semantic srtucture of document, not it's 
 Using semantic markup is an important aspect of modern web development because it makes it easier for search engines, screen readers, and other machines to identify the different parts of your website. 
 It also helps you as a developer keep your site organized, which, in turn, makes it easier to maintain.
 
+*Here is correct semantic HTML markup*:
 ![Semantic markup](./Week-1/semantic-page.png)
 
-*Here is correct semantic HTML markup*
 
-
+![Don't do like this](./common/dislike.png) *And it's evil twin - non-semantic markup*:
 ![Non-semantic markup](./Week-1/non-semantic-page.png)
 
-![Don't do like this](./common/dislike.png)
-
-*And it's evil twin - non-semantic markup*
-
+![Job interview topic](./common/interview.png) Semantic web is one of the most popular job interview topic.
+You can learn more about this at [Semantic HTML article](https://internetingishard.com/html-and-css/semantic-html).
 
 ## Write HTML
 
