@@ -22,25 +22,24 @@ There is no strict topics on personal course projects, but there are basic requi
 	
 ## Some ideas to start with
 	
-### Public REST APIs:
+### Public REST APIs (https://github.com/toddmotto/public-apis):
 
-* https://github.com/toddmotto/public-apis#anime
 
-* Anime: Characters (name, birthday, location, weight), Anime episodes, 
+
+* https://jikan.docs.apiary.io/: Anime Characters (name, birthday, location, weight), Anime episodes, 
 Infographics with charts / d3
 
-* Anti-Malware, Web-Of-Trust. 
-Request "trustness" of web site, then locate it using geo-ip service and show it on map
+* https://www.mywot.com/wiki/API: Anti-Malware, Web-Of-Trust - Request "trustness" of web site, then locate it using geo-ip service and show it on map
 
 * Cryptocurrency: Gather bitcoin historical prices and markable events. Combine them in single infographics timeline
 
 * GitHub: Public repositories statistics and search. How frequent new library or framework with "JS" in it's name being created.
 
-* StackExchange: Questions/answers rate by country.
+* https://api.stackexchange.com/: Questions/answers rate by country.
 
-* Words API: Visualize definitions graph with D3
+* https://www.wordsapi.com/: Visualize definitions graph with D3
 
-* Register of Illegal Sites in Russia: statistics and infographics
+* https://antizapret.info/news/api: Registry of Illegal Sites in Russia: statistics and infographics
 
 * https://lcboapi.com/: Alcohol database: Party constructor
 
