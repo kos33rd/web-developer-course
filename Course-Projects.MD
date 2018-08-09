@@ -20,7 +20,7 @@ There is no strict topics on personal course projects, but there are basic requi
 
 
 	
-## Some ideas to start with
+# Some ideas to start with
 	
 ### Public REST APIs (https://github.com/toddmotto/public-apis):
 
