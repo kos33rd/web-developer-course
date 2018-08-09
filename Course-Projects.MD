@@ -1,6 +1,6 @@
 # Requirements
 
-There is no strict topics on personal course projects, but there are basic requirements, which this project must meet.
+There is no strict topics on personal course projects, but there are basic requirements  project must meet.
 
 ## Application requirements:
 	* SPA: JavaScript Application
@@ -40,7 +40,6 @@ Some ideas on project subject, based on data used by it.
 	
 	* Words API: Visualize definitions graph with D3
 	
-	
 	* Register of Illegal Sites in Russia: statistics and infographics
 	
 	* https://lcboapi.com/: Alcohol database: Party constructor
@@ -61,8 +60,23 @@ Some ideas on project subject, based on data used by it.
 	
 	* https://github.com/r-spacex/SpaceX-API: SpaceX API: events timeline with stocks and photos
 
+	* https://api.meduza.io/: News statistics, News reader
+	
 	* ... // TBD
 	
 ## Public Socket.IO APIs?
 
 // TBD
+
+
+## Custom API:
+	
+	* Text web messenger with media capabilities
+	
+	* WebRTC videoconference app
+	
+	* Online face recognition and image processing (e.g. masks-alike)
+	
+	* Some kind of socket.io multiplayer games?
+	
+
