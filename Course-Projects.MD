@@ -2,21 +2,29 @@
 
 There is no strict topics on personal course projects, but there are basic requirements  project must meet:
 
-## Top-level Application requirements:
+## Top-level Application requirements
 * SPA: JavaScript Application
 * API: Deals with real backend
 * Routing: At least three screens / pages
 * Forms: At least one form with data binding
 * Visualization: Sexy look and rich interface
 
-## Technical requirements:
-* Semantic markup
+
+## Architectural requirements
 * Package manager
 * Module bundler
 * Declarative component-based view library/framework
 * Data manipulation library
 * CSS framework / UI Kit
 * Data visualization library
+
+
+## Technical requirements
+* Express.JS mocks dev-server
+* Unit-tests
+* Functional tests
+* Semantic markup
+* Accessible interface
 
 
 	
