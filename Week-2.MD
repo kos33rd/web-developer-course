@@ -166,7 +166,7 @@ class Dog extends Animal {
 }
 
 
-(new Dog(Bobik')).speak();// Bobik barks.
+(new Dog('Bobik')).speak();// Bobik barks.
 ```
 
 
@@ -204,7 +204,7 @@ define(function (require) {
 _src/main.js_
 
 
-### CommonJS: Hello from Node.js
+### 2. CommonJS: Hello from Node.js
 
 Synchronous module import specification used primarily in node.js environment
 ```javascript
@@ -225,7 +225,7 @@ module.exports = msg;
 _src/main.js_
 
 
-### ES6 modules: Part of modern language specs
+### 3. ES6 modules: Part of modern language specs
 
 “EcmaScript 6 modules” is part of modern JavaScript standards specifications widely used in pre-transpiled client-side JS.
 
@@ -276,6 +276,7 @@ npm install -g cowsay
 and then just run it:
 
 ![Execution result](./Week-2/images/cowsay.png)
+
 _execution result_
 
 
@@ -324,7 +325,7 @@ _node_modules directory content_
 
 Is used to manage locally installed npm packages.
 
-package.json file:
+`package.json` file:
 * lists the packages that your project depends on.
 * allows you to specify the versions of a package that your project can use using semantic versioning rules.
 * makes your build reproducible, and therefore much easier to share with other developers.
@@ -367,10 +368,10 @@ Version numbers are conforms semantic versioning. Examples:
 
 What does each version number means and how to use it in own product development?
 
-Given a version number MAJOR.MINOR.PATCH, increment the:
-* MAJOR version when you make incompatible API changes,
-* MINOR version when you add functionality in a backwards-compatible manner, and
-* PATCH version when you make backwards-compatible bug fixes.
+Given a version number `MAJOR`.`MINOR`.`PATCH`, increment the:
+* `MAJOR` version when you make incompatible API changes,
+* `MINOR` version when you add functionality in a backwards-compatible manner, and
+* `PATCH` version when you make backwards-compatible bug fixes.
 * Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
 
 
@@ -378,9 +379,9 @@ Given a version number MAJOR.MINOR.PATCH, increment the:
 
 As a package “consumer”, you can specify which kinds of updates your app can accept in the `package.json` file:
 
-* Patch releases: 1.0 or 1.0.x or ~1.0.4
-* Minor releases: 1 or 1.x or ^1.0.4
-* Major releases: * or x
+* Patch releases: `1.0` or `1.0.x` or `~1.0.4`
+* Minor releases: `1` or `1.x` or `^1.0.4`
+* Major releases: `*` or `x`
 
 
 
