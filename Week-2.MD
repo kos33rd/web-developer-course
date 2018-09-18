@@ -438,4 +438,4 @@ At the moment a set of practices and patterns established in enterprise world:
 * Webpack-dev-server: https://github.com/webpack/docs/wiki/webpack-dev-server
 * Common development guide on webpack: https://webpack.js.org/guides/development/
 * This lecture as a Google Presentation: https://docs.google.com/presentation/d/1ur7ZzxWZS3FU_GZMPPMmLKDgGdN7ykUoQhPQl9hBR4E/edit?usp=sharing
-
+* Simple project example: https://github.com/kos33rd/web-developer-course/tree/master/Week-2/project-example
