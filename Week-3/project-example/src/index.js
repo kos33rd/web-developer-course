@@ -1,1 +1,2 @@
-console.log("Я родился снова!");
+import log from './src'
+log();
