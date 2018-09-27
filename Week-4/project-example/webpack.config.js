@@ -43,6 +43,7 @@ module.exports = {
   devServer: {
     contentBase: outputDirectory,
     compress: true,
+    historyApiFallback: true,
     port: 9000
   }
 };

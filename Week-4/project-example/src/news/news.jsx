@@ -10,7 +10,7 @@ export class News extends React.Component {
     this.state = {
       isLoading: false,
       isFailed: false,
-      documents: {}
+      documents: []
     }
   }
 
@@ -22,7 +22,7 @@ export class News extends React.Component {
     axios.get('https://meduza.io/api/v3/search?chrono=news&locale=ru&page=0&per_page=24')
       .then((response) => {
         this.setState({
-          documents: response.data.documents,
+          documents: Object.values(response.data.documents) || [],
           isLoading: false
         })
       })
@@ -47,9 +47,9 @@ export class News extends React.Component {
         {this.state.isLoading && <div>Подождите, идет загрузка</div>}
         {this.state.isFailed && <div>Ой-ой :(</div>}
         <ul>
-          {Object.keys(this.state.documents).map((key) => (
-            <li key={key}>
-              <Article data={this.state.documents[key]}/>
+          {this.state.documents.map((doc) => (
+            <li key={doc.title}>
+              <h3 onClick={ (doc) => window.open(doc.url)}>{doc.title}</h3>
             </li>
           ))}
         </ul>
