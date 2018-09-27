@@ -15,7 +15,7 @@ const App = () => (
 
       <hr/>
 
-      <Route path="/about" component={About}/>
+      <Route path="/about" render={() => <About/>}/>
       <Route exact path="/news" component={News}/>
     </div>
   </Router>

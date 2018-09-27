@@ -1,6 +1,7 @@
 import React from "react"
 import {Article} from "./article"
 import axios from "axios"
+import Button from "@material-ui/core/Button/Button"
 
 
 export class News extends React.Component {
@@ -36,6 +37,10 @@ export class News extends React.Component {
   render() {
     return (
       <React.Fragment>
+        <Button onClick={this.onClick} variant="contained" color="primary">
+          Загрузить новости
+        </Button>
+
         <h1 onClick={this.onClick}>
           Click to load news feed
         </h1>
