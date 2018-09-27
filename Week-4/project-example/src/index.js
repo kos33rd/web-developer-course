@@ -1,68 +1,28 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import axios from "axios"
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 
-const Article = ({ data }) => (
-    <span>{data.title}</span>
+import {News} from "./news/news"
+import {About} from "./about/about"
+
+const App = () => (
+  <Router>
+    <div>
+      <ul>
+        <li><Link to="/about">About</Link></li>
+        <li><Link to="/news">News</Link></li>
+      </ul>
+
+      <hr/>
+
+      <Route path="/about" component={About}/>
+      <Route exact path="/news" component={News}/>
+    </div>
+  </Router>
 )
 
 
-class App extends React.Component {
-    constructor (props) {
-        super(props)
-        this.state = {
-            isLoading: false,
-            isFailed: false,
-            documents: {}
-        }
-    }
-
-    componentDidMount () {
-
-    }
-
-    onClick = () => {
-        this.setState({
-            isLoading: true,
-            isFailed: false
-        });
-        axios.get('https://meduza.io/api/v3/search?chrono=news&locale=ru&page=0&per_page=24')
-            .then((response) => {
-                this.setState({
-                    documents: response.data.documents,
-                    isLoading: false
-                })
-            })
-            .catch((e) => {
-                this.setState({
-                    isFailed: true,
-                    isLoading: false
-                })
-            })
-    }
-
-    render () {
-        return (
-            <div>
-                <h1 onClick={this.onClick}>
-                    {this.props.title}
-                </h1>
-                { this.state.isLoading && <div>Подождите, идет загрузка</div>}
-                { this.state.isFailed && <div>Ой-ой :(</div>}
-                <ul>
-                    {Object.keys(this.state.documents).map((key) => (
-                        <li key={key}>
-                            <Article data={this.state.documents[key]} />
-                        </li>
-                    ))}
-                </ul>
-            </div>
-        )
-    }
-}
-
-
 ReactDOM.render(
-  <App title="Click me" />,
+  <App/>,
   document.getElementById('app')
 );
