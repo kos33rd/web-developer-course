@@ -7,3 +7,7 @@
     font-family: Verdana, sans-serif;
     font-size: 14px;
 }
+
+.logo {
+    max-width: 100%;
+}

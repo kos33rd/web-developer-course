@@ -2,16 +2,16 @@ import styles from './styles.css'
 
 export const PureHTMLApp = () => (
   <main>
-    <header className={styles.head}>
-      <a href="/main" className={styles.link}>
+    <header>
+      <a href="/main">
         <b>BR</b> Architects
       </a>
       <nav>
-        <a href="/projects" className="nav-link">Projects</a>
-        <a href="/about" className="nav-link">About</a>
-        <a href="/contact" className="nav-link">Contact</a>
+        <a href="/projects">Projects</a>
+        <a href="/about" >About</a>
+        <a href="/contact" >Contact</a>
       </nav>
     </header>
-    <img src="https://goo.gl/2LxxtC" style={{ maxWidth: '100%' }}/>
+    <img src="https://goo.gl/2LxxtC"/>
   </main>
 )

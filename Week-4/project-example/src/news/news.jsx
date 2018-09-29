@@ -2,9 +2,11 @@ import React from "react"
 import {Article} from "./article"
 import axios from "axios"
 import Button from "@material-ui/core/Button/Button"
+import {selectArticle} from "../action-creators";
 
+import {connect} from "react-redux";
 
-export class News extends React.Component {
+class News extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -37,19 +39,16 @@ export class News extends React.Component {
   render() {
     return (
       <React.Fragment>
+          <h2>{this.props.selectedArticle}</h2>
         <Button onClick={this.onClick} variant="contained" color="primary">
           Загрузить новости
         </Button>
-
-        <h1 onClick={this.onClick}>
-          Click to load news feed
-        </h1>
         {this.state.isLoading && <div>Подождите, идет загрузка</div>}
         {this.state.isFailed && <div>Ой-ой :(</div>}
         <ul>
           {this.state.documents.map((doc) => (
             <li key={doc.title}>
-              <h3 onClick={ (doc) => window.open(doc.url)}>{doc.title}</h3>
+              <h3 onClick={ () => this.props.selectArticle(doc.title)}>{doc.title}</h3>
             </li>
           ))}
         </ul>
@@ -57,3 +56,15 @@ export class News extends React.Component {
     )
   }
 }
+
+const mapStateToProps = (state) => ({
+  selectedArticle: state.article
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  selectArticle: (articleText) => dispatch(selectArticle(articleText))
+});
+
+const ConnectedNews = connect(mapStateToProps, mapDispatchToProps)(News);
+
+export default ConnectedNews;
