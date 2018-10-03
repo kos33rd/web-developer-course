@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 
 import {News} from "./news/news"
 import {About} from "./about/about"
-import {store} from "./store";
+import {store} from "./data/store";
 
 import { Provider } from "react-redux";
 import ConnectedNews from "./news/news";
@@ -26,10 +26,6 @@ const App = () => (
       </Router>
     </Provider>
 )
-
-const handleClick = (data) => {
-    console.log(data)
-}
 
 ReactDOM.render(
   <App/>,
