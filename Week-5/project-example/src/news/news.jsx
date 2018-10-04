@@ -2,7 +2,7 @@ import React from "react"
 import {Article} from "./article"
 import axios from "axios"
 import Button from "@material-ui/core/Button/Button"
-import {selectArticle} from "../data/action-creators";
+import {loadNews, selectArticle} from "../data/action-creators";
 
 import {connect} from "react-redux";
 
@@ -21,6 +21,10 @@ class News extends React.Component {
       isLoading: true,
       isFailed: false
     });
+
+    // TODO: load data within redux
+    this.props.loadNews();
+
     axios.get('https://meduza.io/api/v3/search?chrono=news&locale=ru&page=0&per_page=24')
       .then((response) => {
         this.setState({
@@ -62,7 +66,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  selectArticle: (articleText) => dispatch(selectArticle(articleText))
+  selectArticle: (articleText) => dispatch(selectArticle(articleText)),
+  loadNews: () => dispatch(loadNews())
 });
 
 const ConnectedNews = connect(mapStateToProps, mapDispatchToProps)(News);

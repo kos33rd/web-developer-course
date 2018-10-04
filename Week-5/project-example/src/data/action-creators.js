@@ -7,3 +7,9 @@ export const selectArticle = (article) => {
         article
     }
 };
+
+export const loadNews = () => {
+    return {
+        type: TYPES.LOAD_NEWS
+    }
+};
