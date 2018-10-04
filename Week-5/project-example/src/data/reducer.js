@@ -1,13 +1,36 @@
 import {TYPES} from "./action-types";
 
-export const reducer = (prevState, action) => {
+const initialState = {
+    article: void 0,
+    news: [],
+    newsIsLoading: false,
+    newsLoadingFailed: false
+};
+
+export const reducer = (prevState = initialState, action) => {
     const newState = {...prevState};
     switch (action.type) {
         case TYPES.SELECT_ARTICLE:
             return {...newState, article: action.article};
 
+        case TYPES.LOAD_NEWS_STARTED:
+            return {...newState,
+                newsIsLoading: true,
+                newsLoadingFailed: false
+            };
+
         case TYPES.LOAD_NEWS:
-            return {...newState, news: [ /* ??? ASYNC REQUEST HERE ??? */]}
+            return {...newState,
+                news: Object.values(action.data.documents),
+                newsIsLoading: false,
+                newsLoadingFailed: false
+            };
+
+        case TYPES.LOAD_NEWS_FAILED:
+            return {...newState,
+                newsIsLoading: false,
+                newsLoadingFailed: true
+            };
     }
 
     return newState

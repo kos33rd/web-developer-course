@@ -7,38 +7,10 @@ import {loadNews, selectArticle} from "../data/action-creators";
 import {connect} from "react-redux";
 
 class News extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      isLoading: false,
-      isFailed: false,
-      documents: []
-    }
-  }
 
   onClick = () => {
-    this.setState({
-      isLoading: true,
-      isFailed: false
-    });
-
-    // TODO: load data within redux
     this.props.loadNews();
-
-    axios.get('https://meduza.io/api/v3/search?chrono=news&locale=ru&page=0&per_page=24')
-      .then((response) => {
-        this.setState({
-          documents: Object.values(response.data.documents) || [],
-          isLoading: false
-        })
-      })
-      .catch((e) => {
-        this.setState({
-          isFailed: true,
-          isLoading: false
-        })
-      })
-  }
+  };
 
   render() {
     return (
@@ -47,10 +19,10 @@ class News extends React.Component {
         <Button onClick={this.onClick} variant="contained" color="primary">
           Загрузить новости
         </Button>
-        {this.state.isLoading && <div>Подождите, идет загрузка</div>}
-        {this.state.isFailed && <div>Ой-ой :(</div>}
+        {this.props.newsIsLoading && <div>Подождите, идет загрузка</div>}
+        {this.props.newsLoadingFailed && <div>Ой-ой :(</div>}
         <ul>
-          {this.state.documents.map((doc) => (
+          {this.props.news.map((doc) => (
             <li key={doc.title}>
               <h3 onClick={ () => this.props.selectArticle(doc.title)}>{doc.title}</h3>
             </li>
@@ -62,12 +34,15 @@ class News extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-  selectedArticle: state.article
+    selectedArticle: state.article,
+    news: state.news,
+    newsIsLoading: state.newsIsLoading,
+    newsLoadingFailed: state.newsLoadingFailed
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  selectArticle: (articleText) => dispatch(selectArticle(articleText)),
-  loadNews: () => dispatch(loadNews())
+    selectArticle: (articleText) => dispatch(selectArticle(articleText)),
+    loadNews: () => loadNews(dispatch)
 });
 
 const ConnectedNews = connect(mapStateToProps, mapDispatchToProps)(News);
