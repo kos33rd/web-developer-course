@@ -1,14 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
-import AppBar from '@material-ui/core/AppBar';
-
-import {News} from "./news/news"
-import {About} from "./about/about"
-import {store} from "./data/store";
-
+import {BrowserRouter as Router, Route} from 'react-router-dom'
 import {Provider} from "react-redux";
-import ConnectedNews from "./news/news";
+
+import {store} from "./data/store";
 import {Layout} from "./layout";
 
 const App = () => (
@@ -17,11 +12,7 @@ const App = () => (
                 <Route path="/" component={Layout} />
             </Router>
     </Provider>
-)
-
-const handleClick = (data) => {
-    console.log(data)
-}
+);
 
 ReactDOM.render(
     <App/>,

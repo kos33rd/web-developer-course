@@ -1,15 +1,6 @@
-
 import { createStore } from 'redux'
+import { composeWithDevTools } from 'redux-devtools-extension';
 
-const reducer =(prevState, action) => {
-    console.log('Got action: ', action);
-    const newState = {...prevState};
-    switch (action.type) {
-        case 'SELECT_ARTICLE':
-            return {...store, article: action.article}
-    }
+import {reducer} from "./reducer";
 
-    return newState
-};
-
-export const store = createStore(reducer);
+export const store = createStore(reducer, composeWithDevTools());

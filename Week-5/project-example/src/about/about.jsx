@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 export const About = (props) => (
   <h3>This is an {props.title} page</h3>
-)
+);
 
 About.propTypes = {
   title: PropTypes.string.isRequired,
@@ -15,4 +15,3 @@ About.propTypes = {
 About.defaultProps = {
   title: 'News app'
 };
-
