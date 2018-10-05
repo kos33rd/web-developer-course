@@ -8,11 +8,14 @@ export const selectArticle = (article) => {
     }
 };
 
-export const loadNews = (dispatch) => {
-
+export const loadNews = () => (dispatch, getState) => {
     dispatch({type: TYPES.LOAD_NEWS_STARTED});
 
-    axios.get('https://meduza.io/api/v3/search?chrono=news&locale=ru&page=0&per_page=24')
+    const formData = getState().form.search.values;
+    console.log(formData);
+    const { page, articlesPerPage } = formData;
+
+    axios.get(`https://meduza.io/api/v3/search?chrono=news&locale=ru&page=${page}&per_page=${articlesPerPage}`)
         .then((response) => {
 
             // Dispatching an action only when request complete
