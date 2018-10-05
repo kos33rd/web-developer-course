@@ -3,32 +3,24 @@ import {Field, reduxForm} from 'redux-form'
 import React from "react";
 
 
-class Search extends React.Component {
+const AdaptedTextField = ({input: {value, onChange}, ...custom}) => (
+    <TextField
+        value={value}
+        onChange={onChange}
+        {...custom}
+    />
+);
 
-    state = {
-        page: 0,
-        articlesPerPage: 24
-    };
-
-    handleChange = name => event => {
-        this.setState({
-            [name]: event.target.value,
-        });
-    };
-
-    render() {
-        return (
-            <form>
-                <Field component={TextField} name="page" label="Страница" margin="normal"/>
-                <Field component={TextField} name="articlesPerPage" label="Новостей на странице" margin="normal"/>
-            </form>
-        );
-    }
-}
+const Search = () => (
+    <form>
+        <Field component={AdaptedTextField} name="page" label="Страница" margin="normal"/>
+        <Field component={AdaptedTextField} name="articlesPerPage" label="Новостей на странице" margin="normal"/>
+    </form>
+);
 
 const initialValues = {
     page: 0,
     articlesPerPage: 24
 };
 
-export default reduxForm({initialValues})(Search);
+export default reduxForm({form: 'search', initialValues})(Search);
