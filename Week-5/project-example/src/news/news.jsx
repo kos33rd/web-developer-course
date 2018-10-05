@@ -5,32 +5,57 @@ import Button from "@material-ui/core/Button/Button"
 import {loadNews, selectArticle} from "../data/action-creators";
 
 import {connect} from "react-redux";
+import TextField from "@material-ui/core/TextField/TextField";
 
 class News extends React.Component {
 
-  onClick = () => {
-    this.props.loadNews();
-  };
+    onClick = () => {
+        this.props.loadNews();
+    };
 
-  render() {
-    return (
-      <React.Fragment>
-          <h2>{this.props.selectedArticle}</h2>
-        <Button onClick={this.onClick} variant="contained" color="primary">
-          Загрузить новости
-        </Button>
-        {this.props.newsIsLoading && <div>Подождите, идет загрузка</div>}
-        {this.props.newsLoadingFailed && <div>Ой-ой :(</div>}
-        <ul>
-          {this.props.news.map((doc) => (
-            <li key={doc.title}>
-              <h3 onClick={ () => this.props.selectArticle(doc.title)}>{doc.title}</h3>
-            </li>
-          ))}
-        </ul>
-      </React.Fragment>
-    )
-  }
+    state = {
+        page: 0,
+        articlesPerPage: 24
+    };
+
+    handleChange = name => event => {
+        this.setState({
+            [name]: event.target.value,
+        });
+    };
+
+    render() {
+        return (
+            <React.Fragment>
+                <h2 />
+                <Button onClick={this.onClick} variant="contained" color="primary">
+                    Загрузить новости
+                </Button>
+                <br/>
+                <TextField
+                    label="Страница"
+                    value={this.state.page}
+                    onChange={this.handleChange('page')}
+                    margin="normal"
+                />
+                <TextField
+                    label="Новостей на странице"
+                    value={this.state.articlesPerPage}
+                    onChange={this.handleChange('articlesPerPage')}
+                    margin="normal"
+                />
+                {this.props.newsIsLoading && <div>Подождите, идет загрузка</div>}
+                {this.props.newsLoadingFailed && <div>Ой-ой :(</div>}
+                <ul>
+                    {this.props.news.map((doc) => (
+                        <li key={doc.title}>
+                            <p onClick={() => this.props.selectArticle(doc.title)}>{doc.title}</p>
+                        </li>
+                    ))}
+                </ul>
+            </React.Fragment>
+        )
+    }
 }
 
 const mapStateToProps = (state) => ({
