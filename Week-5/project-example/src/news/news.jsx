@@ -35,10 +35,10 @@ class News extends React.Component {
 }
 
 const mapStateToProps = (state) => ({
-    selectedArticle: state.article,
-    news: state.news,
-    newsIsLoading: state.newsIsLoading,
-    newsLoadingFailed: state.newsLoadingFailed
+    selectedArticle: state.app.article,
+    news: state.app.news,
+    newsIsLoading: state.app.newsIsLoading,
+    newsLoadingFailed: state.app.newsLoadingFailed
 });
 
 const mapDispatchToProps = (dispatch) => ({

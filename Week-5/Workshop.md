@@ -355,7 +355,68 @@ Now we have to connect our form values with ajax request and pass field values t
 Initial API request:
 `https://meduza.io/api/v3/search?chrono=news&locale=ru&page=0&per_page=24`
 
+To make form-to-store mapping easier we could use a `redux-form` library:
 
+`npm i redux-form`
+
+```
+<form>
+    <Field component={TextField} name="page" label="Страница" margin="normal"/>
+    <Field component={TextField} name="articlesPerPage" label="Новостей на странице" margin="normal"/>
+</form>
+    
+const initialValues = {
+    page: 0,
+    articlesPerPage: 24
+};
+
+export default reduxForm({initialValues})(Search);
+
+```
+
+Now form is rendered, but no initial values in fields and no binding with store. What's whrong?
+
+Problem is: Redux-form's `<Field/>` sends to out component values and handlers as a special props. We must utilize this props in our component, but components from `material-ui` have different API, so we need to make an adapter to transform reux-form API props to material-ui format. 
+Here is a HOC for this:
+
+```javascript
+const AdaptedTextField = ({input: {value, onChange}, ...custom}) => (
+    <TextField
+        value={value}
+        onChange={onChange}
+        {...custom}
+    />
+);
+```
+
+Redux-form's `<Field />` passing two high-level props to our component: `imput` and `meta`. Input contains data and handlers for two-way field manipulations like set value of the field with `input.value` and handling field user input with `input.onChange` handler. `meta` object contains some field internal state flags such as `touched`, `active` and etc.
+
+API on redux-form's `Field` could be found here: https://redux-form.com/7.4.2/docs/api/field.md/
+
+After our modifications we could see that when we typing letters in our inputs, redux dev tools shows us actions, firing by `redux-form` (like `@@redux-form/CHANGE`. But out application store still without changes.
+
+That's because we forgot one last step: to connect redux-rorm's reducers to our store. Let's do this:
+
+```javascript
+import {createStore, combineReducers} from 'redux'
+import {composeWithDevTools} from 'redux-devtools-extension';
+
+import {reducer as formReducer} from 'redux-form'
+import {reducer as appReducer} from "./reducer";
+
+const reducer = combineReducers({
+    app: appReducer,
+    form: formReducer
+});
+
+export const store = createStore(reducer, composeWithDevTools());
+```
+
+
+Finally - fully functional form with store connection!
+
+
+Now we can use our stored data to inject params into out AJAX request url:
 
 
 
