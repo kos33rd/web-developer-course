@@ -309,6 +309,53 @@ const ConnectedNews = connect(mapStateToProps, mapDispatchToProps)(News);
 ```
 
 
+## Forms 
+
+Let's add some user input in our application:
+
+```javascript
+
+export class Search extends React.Component {
+
+    state = {
+        page: 0,
+        articlesPerPage: 24
+    };
+
+    handleChange = name => event => {
+        this.setState({
+            [name]: event.target.value,
+        });
+    };
+
+    render() {
+        return (
+            <form>
+                <TextField
+                    label="Страница"
+                    value={this.state.page}
+                    onChange={this.handleChange('page')}
+                    margin="normal"
+                />
+                <TextField
+                    label="Новостей на странице"
+                    value={this.state.articlesPerPage}
+                    onChange={this.handleChange('articlesPerPage')}
+                    margin="normal"
+                />
+            </form>
+        );
+    }
+}
+```
+
+
+Now we have to connect our form values with ajax request and pass field values to it as a GET params.
+
+Initial API request:
+`https://meduza.io/api/v3/search?chrono=news&locale=ru&page=0&per_page=24`
+
+
 
 
 

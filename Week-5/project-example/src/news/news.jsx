@@ -1,27 +1,14 @@
 import React from "react"
-import {Article} from "./article"
-import axios from "axios"
 import Button from "@material-ui/core/Button/Button"
 import {loadNews, selectArticle} from "../data/action-creators";
 
 import {connect} from "react-redux";
-import TextField from "@material-ui/core/TextField/TextField";
+import Search from "./search";
 
 class News extends React.Component {
 
     onClick = () => {
         this.props.loadNews();
-    };
-
-    state = {
-        page: 0,
-        articlesPerPage: 24
-    };
-
-    handleChange = name => event => {
-        this.setState({
-            [name]: event.target.value,
-        });
     };
 
     render() {
@@ -32,18 +19,7 @@ class News extends React.Component {
                     Загрузить новости
                 </Button>
                 <br/>
-                <TextField
-                    label="Страница"
-                    value={this.state.page}
-                    onChange={this.handleChange('page')}
-                    margin="normal"
-                />
-                <TextField
-                    label="Новостей на странице"
-                    value={this.state.articlesPerPage}
-                    onChange={this.handleChange('articlesPerPage')}
-                    margin="normal"
-                />
+                <Search />
                 {this.props.newsIsLoading && <div>Подождите, идет загрузка</div>}
                 {this.props.newsLoadingFailed && <div>Ой-ой :(</div>}
                 <ul>
