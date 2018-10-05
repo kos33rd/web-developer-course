@@ -43,7 +43,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
     selectArticle: (articleText) => dispatch(selectArticle(articleText)),
-    loadNews: () => loadNews(dispatch)
+    loadNews: () => dispatch(loadNews())
 });
 
 const ConnectedNews = connect(mapStateToProps, mapDispatchToProps)(News);

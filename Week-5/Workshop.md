@@ -419,11 +419,84 @@ Finally - fully functional form with store connection!
 Now we can use our stored data to inject params into out AJAX request url:
 
 
+```javascript
+export const loadNews = (dispatch) => {
+    dispatch({type: TYPES.LOAD_NEWS_STARTED});
+
+    /* Get page and articlesPerPage from store somehow */
+    
+    axios.get('https://meduza.io/api/v3/search?chrono=news&locale=ru&page=0&per_page=24')
+    ...
+```
+
+Our action creator became more and more complicated. To make things a little bit more easier let's take a look at `redux-thunk` lib: https://github.com/reduxjs/redux-thunk
+
+Simplest action creator:
+```javascript
+function selectArticle() {
+  return {
+    type: SELECT_ARTICLE,
+    article
+  };
+}
+```
+
+An action creator with dispatch as argument (naive approach):
+```javascript
+export const loadNews = (dispatch) => {
+    dispatch({type: TYPES.LOAD_NEWS_STARTED});
+    /* some async operations */
+}
+```
 
 
+An action creator with use of `thunk`:
+```javascript
+export const loadNews = (params) => (dispatch, getState) => {
+    dispatch({type: TYPES.LOAD_NEWS_STARTED});
+    /* some async operations with function params and access to store with getState */
+}
+```
+
+`npm i redux-thunk`
+
+```javascript
+import {createStore, combineReducers, applyMiddleware} from 'redux'
+import thunk from 'redux-thunk'
+import {composeWithDevTools} from 'redux-devtools-extension';
+
+// ...
+
+export const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));
+```
+
+```javascript
+    // in mapDispatchToProps
+    loadNews: () => dispatch(loadNews())
+```
 
 
+```javascript
+export const loadNews = () => (dispatch, getState) => {
+    dispatch({type: TYPES.LOAD_NEWS_STARTED});
 
+    const formData = getState().form.search.values;
+    console.log(formData);
+    const { page, articlesPerPage } = formData;
 
+    axios.get(`https://meduza.io/api/v3/search?chrono=news&locale=ru&page=${page}&per_page=${articlesPerPage}`)
+        .then((response) => {
+
+            // Dispatching an action only when request complete
+            dispatch({
+                type: TYPES.LOAD_NEWS,
+                data: response.data
+            })
+        })
+        .catch((e) => {
+            dispatch({type: TYPES.LOAD_NEWS_FAILED, error: e});
+        });
+};
+```
 
 
