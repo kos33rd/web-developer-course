@@ -1,0 +1,8 @@
+
+.app-bar-title {
+    flex-grow: 1;
+}
+
+.app-bar-button-spacer {
+    margin: 0 8px;
+}

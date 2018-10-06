@@ -1,6 +1,4 @@
 import React from "react"
-import {Article} from "./article"
-import axios from "axios"
 import Button from "@material-ui/core/Button/Button"
 import {loadNews, selectArticle} from "../data/action-creators";
 
@@ -14,7 +12,7 @@ class News extends React.Component {
   render() {
     return (
       <React.Fragment>
-          <h2>{this.props.selectedArticle}</h2>
+          <h3>{this.props.selectedArticle}</h3>
         <Button onClick={this.props.loadNews} variant="contained" color="primary">
           Загрузить новости
         </Button>
@@ -23,7 +21,7 @@ class News extends React.Component {
         <ul>
           {this.props.news.map((doc) => (
             <li key={doc.title}>
-              <h3 onClick={ () => this.props.selectArticle(doc.title)}>{doc.title}</h3>
+              <p onClick={ () => this.props.selectArticle(doc.title)}>{doc.title}</p>
             </li>
           ))}
         </ul>
