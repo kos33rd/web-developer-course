@@ -7,25 +7,35 @@ import Toolbar from "@material-ui/core/Toolbar/Toolbar";
 import Typography from "@material-ui/core/Typography/Typography";
 import Button from "@material-ui/core/Button/Button";
 
-import style from './layout.css'
+const style = {};
 
-export const Layout = () => (
-    <div>
-        <AppBar position="static">
-            <Toolbar variant="dense">
-                <Typography variant="title" color="inherit" className={style.appBarTitle}>
-                    News app
-                </Typography>
-                <Button variant="contained" color="secondary" component={Link} to="/about">
-                    About
-                </Button>
-                <span className={style.appBarButtonSpacer}/>
-                <Button variant="contained" color="secondary" component={Link} to="/news">
-                    News feed
-                </Button>
-            </Toolbar>
-        </AppBar>
-        <Route path="/about" component={About}/>
-        <Route exact path="/news" component={ConnectedNews}/>
-    </div>
-);
+export class Layout extends React.Component {
+
+ someMethod = () => {
+     console.log('test');
+ };
+
+render () {
+    return (
+        <div>
+            <AppBar position="static">
+                <Toolbar variant="dense">
+                    <Typography variant="title" color="inherit" className={style.appBarTitle}>
+                        News app
+                    </Typography>
+                    <Button variant="contained" color="secondary" component={Link} to="/about">
+                        About
+                    </Button>
+                    <span className={style.appBarButtonSpacer}/>
+                    <Button variant="contained" color="secondary" component={Link} to="/news">
+                        News feed
+                    </Button>
+                </Toolbar>
+            </AppBar>
+            <Route path="/about" component={About}/>
+            <Route exact path="/news" component={ConnectedNews}/>
+        </div>
+    )
+}
+
+}

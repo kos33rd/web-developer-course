@@ -4,10 +4,6 @@ const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 const outputDirectory = path.join(__dirname, 'dist');
 
-function srcPath(subdir) {
-    return path.join(__dirname, "src", subdir);
-}
-
 module.exports = {
     mode: "development",
     entry: {
