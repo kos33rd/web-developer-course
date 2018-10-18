@@ -1,21 +1,27 @@
+const axios = require("axios")
 const express = require("express");
-const app = express();
+const fs = require("fs");
+const path = require('path');
 
+const app = express();
 
 app.get("/api/v3/search", (req, res) => {
   const page = req.query.page || 0
 
-  console.log(req);
   try {
     let mock = require(`./search/${page}`);
+    res.send(mock);
   } catch (e) {
-
-    // Надо бы загрузить настоящие данные и сохранить их в стабовом кэше
-
+    const realUrl = `https://meduza.io${req.url}`;
+    console.log('Fallback to real URL:', realUrl)
+    axios
+      .get(realUrl)
+      .then((data) => {
+        console.log('Trying to save ', path.resolve(`./stub/search/${page}.json`))
+        fs.writeFileSync(path.resolve(`./stub/search/${page}.json`), JSON.stringify(data.data));
+        res.send(data.data);
+      })
   }
-
-
-  res.send(mock);
 
 });
 
