@@ -8,6 +8,7 @@ import {About} from "./about/about";
 import ConnectedNews from "./news/news";
 import Toolbar from "@material-ui/core/Toolbar/Toolbar";
 import Typography from "@material-ui/core/Typography/Typography";
+import {newsCount} from "./data/selectors"
 
 const LayoutComponent = ({match, newsCount}) => (
     <main>
@@ -30,7 +31,7 @@ const LayoutComponent = ({match, newsCount}) => (
 );
 
 const mapStateToProps = (state) => ({
-  newsCount: (state.app && state.app.news && state.app.news.length) || 0
+  newsCount: newsCount(state)
 })
 
 export const Layout = connect(mapStateToProps)(LayoutComponent)

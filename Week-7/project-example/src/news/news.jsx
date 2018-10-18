@@ -4,6 +4,7 @@ import {loadNews, selectArticle} from "../data/action-creators";
 
 import {connect} from "react-redux";
 import Search from "./search";
+import {newsCount} from "../data/selectors"
 
 class News extends React.Component {
 
@@ -40,8 +41,7 @@ const mapStateToProps = (state) => ({
     news: state.app.news,
     newsIsLoading: state.app.newsIsLoading,
     newsLoadingFailed: state.app.newsLoadingFailed,
-    newsCount: (state.app && state.app.news && state.app.news.length) || 0
-
+    newsCount: newsCount(state)
 });
 
 const mapDispatchToProps = (dispatch) => ({
