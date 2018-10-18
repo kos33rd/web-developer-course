@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
+const webpack = require("webpack")
 
 const outputDirectory = path.join(__dirname, 'dist');
 
@@ -51,6 +52,9 @@ module.exports = {
             title: "My App",
             hash: true,
             template: "stub/index.html"
+        }),
+        new webpack.DefinePlugin({
+          BACKEND_URL: `"${process.env.BACKEND_URL}"`
         })
     ],
     devServer: {

@@ -4,7 +4,8 @@
   "description": "first app",
   "main": "src/index.jsx",
   "scripts": {
-    "dev": "nodemon ./startServer.js",
+    "dev": "set BACKEND_URL=https://meduza.io&& nodemon ./startServer.js",
+    "dev-stub": "set BACKEND_URL=http://localhost:8090&& nodemon ./startServer.js",
     "build": "webpack",
     "prod": "webpack --mode production"
   },
