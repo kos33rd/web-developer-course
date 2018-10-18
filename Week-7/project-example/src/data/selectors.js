@@ -1,2 +1,10 @@
+import { createSelector } from 'reselect'
 
-export const newsCount = (state) => (state.app && state.app.news && state.app.news.length) || 0
+const newsSelector = createSelector(state => state.app.news, news => news || [])
+
+export const newsCount = createSelector(newsSelector,
+  (news) => {
+    console.log('Calculating...')
+    return news.length
+  }
+)

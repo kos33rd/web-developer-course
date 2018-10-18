@@ -45,6 +45,7 @@
     "redux": "^4.0.0",
     "redux-devtools-extension": "^2.13.5",
     "redux-form": "^7.4.2",
-    "redux-thunk": "*"
+    "redux-thunk": "*",
+    "reselect": "^4.0.0"
   }
 }
