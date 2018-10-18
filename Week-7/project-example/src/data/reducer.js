@@ -21,9 +21,10 @@ export const reducer = (prevState = initialState, action) => {
 
         case TYPES.LOAD_NEWS:
             return {...newState,
-                news: Object.values(action.data.documents),
+                news: prevState.news.concat(Object.values(action.data.documents)),
                 newsIsLoading: false,
-                newsLoadingFailed: false
+                newsLoadingFailed: false,
+                page: action.data.page
             };
 
         case TYPES.LOAD_NEWS_FAILED:
