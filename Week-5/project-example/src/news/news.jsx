@@ -20,6 +20,7 @@ class News extends React.Component {
                 </Button>
                 <br/>
                 <Search />
+                <h3>Загружено новостей: {this.props.newsCount}</h3>
                 {this.props.newsIsLoading && <div>Подождите, идет загрузка</div>}
                 {this.props.newsLoadingFailed && <div>Ой-ой :(</div>}
                 <ul>
@@ -38,7 +39,9 @@ const mapStateToProps = (state) => ({
     selectedArticle: state.app.article,
     news: state.app.news,
     newsIsLoading: state.app.newsIsLoading,
-    newsLoadingFailed: state.app.newsLoadingFailed
+    newsLoadingFailed: state.app.newsLoadingFailed,
+    newsCount: (state.app && state.app.news && state.app.news.length) || 0
+
 });
 
 const mapDispatchToProps = (dispatch) => ({
