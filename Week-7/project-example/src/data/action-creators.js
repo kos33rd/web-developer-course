@@ -1,6 +1,9 @@
 import {TYPES} from "./action-types";
 import axios from "axios";
 
+// const SERVER = 'https://meduza.io'
+const SERVER = 'http://localhost:8090'
+
 export const selectArticle = (article) => {
     return {
         type: TYPES.SELECT_ARTICLE,
@@ -8,10 +11,10 @@ export const selectArticle = (article) => {
     }
 };
 
-export const loadNews = (page = 3) => (dispatch, getState) => {
+export const loadNews = (page = 0) => (dispatch, getState) => {
     dispatch({type: TYPES.LOAD_NEWS_STARTED});
     console.log('Loading page', page)
-    axios.get(`https://meduza.io/api/v3/search?chrono=shapito&locale=ru&page=${page}&per_page=24`)
+    axios.get(`${SERVER}/api/v3/search?chrono=shapito&locale=ru&page=${page}&per_page=24`)
         .then((response) => {
 
             // Dispatching an action only when request complete

@@ -14,7 +14,6 @@ const client = hotClient(compiler, options);
 const { server } = client;
 server.on('listening', () => {
   app.use(middleware(compiler, { publicPath }));
-
   // Fallback when no previous route was matched
   app.get('*', (req, res, next) => {
     const filename = path.resolve(compiler.outputPath, 'index.html');

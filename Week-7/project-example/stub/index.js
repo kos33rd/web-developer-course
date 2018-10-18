@@ -2,22 +2,22 @@ const express = require("express");
 const app = express();
 
 
+app.get("/api/v3/search", (req, res) => {
+  const page = req.query.page || 0
 
-app.get("/api/getUsername", (req, res) =>{
+  console.log(req);
+  try {
+    let mock = require(`./search/${page}`);
+  } catch (e) {
 
-    let mock = require('./mock');
+    // Надо бы загрузить настоящие данные и сохранить их в стабовом кэше
 
-    if(req.body.id === 1){
-        mock.username = 2;
-        mock.userDefaultTown = 10;
-    }
+  }
 
-    if(req.body.id === 2){
-        mock.username = 3;
-    }
-        res.send(mock);
-    }
-);
+
+  res.send(mock);
+
+});
 
 app.listen(8090, () => console.log("Listening on port 8090!"));
 

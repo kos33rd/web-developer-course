@@ -8,8 +8,6 @@ export const newsCount = createSelector(newsSelector,
   }
 )
 
-// https://meduza.io/image/attachments/images/003/356/167/large/C9qbgTsoR3g4X-Js9apu8g.jpg
-
 export const photosSelector = createSelector(newsSelector,
   (news) => {
     return news.filter(
