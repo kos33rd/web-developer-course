@@ -24,8 +24,8 @@ describe('testing Layout component', () => {
                 , {
                     createNodeMock: ({type}) => document.createElement(type)
                 });
-        const testInstance = container.createInstance();
-        testInstance.someMethod();
+        const testInstance = container.getInstance();
+        // testInstance.someMethod();
         expect(container.toJSON()).toMatchSnapshot();
     });
 });

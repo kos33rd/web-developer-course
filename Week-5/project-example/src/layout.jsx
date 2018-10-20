@@ -24,7 +24,7 @@ render () {
                         News app
                     </Typography>
                     <Button variant="contained" color="secondary" component={Link} to="/about">
-                        About
+                        About3
                     </Button>
                     <span className={style.appBarButtonSpacer}/>
                     <Button variant="contained" color="secondary" component={Link} to="/news">

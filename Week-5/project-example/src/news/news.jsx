@@ -3,10 +3,12 @@ import Button from "@material-ui/core/Button/Button"
 import {loadNews, selectArticle} from "../data/action-creators";
 
 import {connect} from "react-redux";
+import { UprgadedSearchBar } from './search-bar'
 
 const News = (props) => (
     <React.Fragment>
         <h3>{props.selectedArticle}</h3>
+        <UprgadedSearchBar />
         <Button onClick={props.loadNews} variant="contained" color="primary">
             Загрузить новости
         </Button>
@@ -23,10 +25,10 @@ const News = (props) => (
 );
 
 const mapStateToProps = (state) => ({
-    selectedArticle: state.article,
-    news: state.news,
-    isLoading: state.newsIsLoading,
-    isFailed: state.newsLoadFailed
+    selectedArticle: state.app.article,
+    news: state.app.news,
+    isLoading: state.app.newsIsLoading,
+    isFailed: state.app.newsLoadFailed
 });
 
 const mapDispatchToProps = (dispatch) => ({
