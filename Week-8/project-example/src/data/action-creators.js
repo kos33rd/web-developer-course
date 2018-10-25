@@ -20,7 +20,7 @@ export const loadNews = (page = 0) => (dispatch, getState) => {
                 type: TYPES.LOAD_NEWS,
                 data: response.data,
                 page
-            })
+            });
             setTimeout(() => loadNews(page + 1)(dispatch, getState), 2000)
         })
         .catch((e) => {

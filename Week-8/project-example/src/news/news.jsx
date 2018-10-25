@@ -5,6 +5,7 @@ import {loadNews, selectArticle} from "../data/action-creators";
 import {connect} from "react-redux";
 import Search from "./search";
 import {newsCount} from "../data/selectors"
+import Calendar from "./calendar";
 
 class News extends React.Component {
 
@@ -21,6 +22,7 @@ class News extends React.Component {
                 </Button>
                 <br/>
                 <Search />
+                <Calendar />
                 <h3>Загружено новостей: {this.props.newsCount}</h3>
                 {this.props.newsIsLoading && <div>Подождите, идет загрузка</div>}
                 {this.props.newsLoadingFailed && <div>Ой-ой :(</div>}

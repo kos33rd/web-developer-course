@@ -6,7 +6,7 @@ export const newsCount = createSelector(newsSelector,
   (news) => {
     return news.length
   }
-)
+);
 
 export const photosSelector = createSelector(newsSelector,
   (news) => {
@@ -18,4 +18,13 @@ export const photosSelector = createSelector(newsSelector,
       height: article.image.original_height
     }))
   }
-)
+);
+
+export const hoursDistribution = createSelector(newsSelector,
+    (news) => {
+        // TODO: replace with calculated data
+        return new Array(1)
+            .fill(0)
+            .map(() => new Array(24).fill(0).map(() => Math.floor(Math.random() * 100)));
+    }
+);
