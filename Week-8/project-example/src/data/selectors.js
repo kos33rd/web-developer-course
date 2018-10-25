@@ -22,9 +22,13 @@ export const photosSelector = createSelector(newsSelector,
 
 export const hoursDistribution = createSelector(newsSelector,
     (news) => {
-        // TODO: replace with calculated data
-        return new Array(1)
-            .fill(0)
-            .map(() => new Array(24).fill(0).map(() => Math.floor(Math.random() * 100)));
+
+        const hoursSlice = new Array(24).fill(0);
+        news.forEach(article => {
+            const date = new Date(article.published_at * 1000);
+            hoursSlice[date.getHours()] += 1
+        });
+        return [hoursSlice];
+
     }
 );
