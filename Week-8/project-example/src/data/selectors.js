@@ -23,12 +23,12 @@ export const photosSelector = createSelector(newsSelector,
 export const hoursDistribution = createSelector(newsSelector,
     (news) => {
 
-        const hoursSlice = new Array(24).fill(0);
+        const days = new Array(7).fill(0);
+        const daysDistribution = days.map(el => new Array(24).fill(0));
         news.forEach(article => {
             const date = new Date(article.published_at * 1000);
-            hoursSlice[date.getHours()] += 1
+            daysDistribution[date.getDay()][date.getHours()] += 1;
         });
-        return [hoursSlice];
-
+        return daysDistribution;
     }
 );

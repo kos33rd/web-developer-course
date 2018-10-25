@@ -4,8 +4,8 @@ import {connect} from "react-redux";
 
 import {hoursDistribution} from '../data/selectors'
 
-const xLabels = new Array(24).fill(0).map((_, i) => `${i}:00`);
-const yLabels = ['Время'];
+const xLabels = new Array(24).fill(0).map((_, i) => `${i}`);
+const yLabels = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
 
 
 const Calendar = ({hoursDistribution}) => {
