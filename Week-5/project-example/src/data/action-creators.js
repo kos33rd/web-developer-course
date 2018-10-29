@@ -1,6 +1,7 @@
 import {TYPES} from "./action-types";
 import axios from "axios";
 
+
 export const selectArticle = (article) => {
     return {
         type: TYPES.SELECT_ARTICLE,
@@ -8,23 +9,20 @@ export const selectArticle = (article) => {
     }
 };
 
-export const loadNews = () => (dispatch, getState) => {
-    dispatch({type: TYPES.LOAD_NEWS_STARTED});
-
-    const formData = getState().form.search.values;
-    console.log(formData);
-    const { page, articlesPerPage } = formData;
-
-    axios.get(`https://meduza.io/api/v3/search?chrono=news&locale=ru&page=${page}&per_page=${articlesPerPage}`)
+export const loadNews = (dispatch) => {
+    dispatch({
+        type: TYPES.LOAD_NEWS_STARTED
+    });
+    axios.get('https://meduza.io/api/v3/search?chrono=news&locale=ru&page=0&per_page=24')
         .then((response) => {
-
-            // Dispatching an action only when request complete
             dispatch({
                 type: TYPES.LOAD_NEWS,
-                data: response.data
+                data: Object.values(response.data.documents)
             })
         })
         .catch((e) => {
-            dispatch({type: TYPES.LOAD_NEWS_FAILED, error: e});
+            dispatch({
+                type: TYPES.LOAD_NEWS_FAILED
+            });
         });
 };

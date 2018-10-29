@@ -1,36 +1,31 @@
-import React from "react"
-import AppBar from "@material-ui/core/AppBar/AppBar";
-import Button from '@material-ui/core/Button';
 import {Link, Route} from "react-router-dom";
-import { connect } from 'react-redux'
-
 import {About} from "./about/about";
 import ConnectedNews from "./news/news";
+import React from "react";
+import AppBar from "@material-ui/core/AppBar/AppBar";
 import Toolbar from "@material-ui/core/Toolbar/Toolbar";
 import Typography from "@material-ui/core/Typography/Typography";
+import Button from "@material-ui/core/Button/Button";
 
-const LayoutComponent = ({match, newsCount}) => (
-    <main>
+import style from './layout.css'
+
+export const Layout = () => (
+    <div>
         <AppBar position="static">
-            <Toolbar>
-                <Typography variant="title" color="inherit" style={{flexGrow: 1}}>
-                    Project-example
+            <Toolbar variant="dense">
+                <Typography variant="title" color="inherit" className={style.appBarTitle}>
+                    News app
                 </Typography>
                 <Button variant="contained" color="secondary" component={Link} to="/about">
-                    О проекте
+                    About
                 </Button>
+                <span className={style.appBarButtonSpacer}/>
                 <Button variant="contained" color="secondary" component={Link} to="/news">
-                    {`Новости (${newsCount})`}
+                    News feed
                 </Button>
             </Toolbar>
         </AppBar>
-        <Route path={`${match.url}about`} component={About}/>
-        <Route path={`${match.url}news`} component={ConnectedNews}/>
-    </main>
+        <Route path="/about" component={About}/>
+        <Route exact path="/news" component={ConnectedNews}/>
+    </div>
 );
-
-const mapStateToProps = (state) => ({
-  newsCount: (state.app && state.app.news && state.app.news.length) || 0
-})
-
-export const Layout = connect(mapStateToProps)(LayoutComponent)

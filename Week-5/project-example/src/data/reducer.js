@@ -1,35 +1,33 @@
 import {TYPES} from "./action-types";
 
-const initialState = {
-    article: void 0,
-    news: [],
-    newsIsLoading: false,
-    newsLoadingFailed: false
+const initState = {
+    news: []
 };
 
-export const reducer = (prevState = initialState, action) => {
+export const reducer =(prevState = initState, action) => {
     const newState = {...prevState};
     switch (action.type) {
         case TYPES.SELECT_ARTICLE:
             return {...newState, article: action.article};
 
+        case TYPES.LOAD_NEWS:
+            return {
+                ...newState,
+                news: action.data,
+                newsIsLoading: false
+            };
+
         case TYPES.LOAD_NEWS_STARTED:
             return {...newState,
                 newsIsLoading: true,
-                newsLoadingFailed: false
-            };
-
-        case TYPES.LOAD_NEWS:
-            return {...newState,
-                news: Object.values(action.data.documents),
-                newsIsLoading: false,
-                newsLoadingFailed: false
+                newsLoadFailed: false
             };
 
         case TYPES.LOAD_NEWS_FAILED:
-            return {...newState,
-                newsIsLoading: false,
-                newsLoadingFailed: true
+            return {
+                ...newState,
+                newsLoadFailed: true,
+                newsIsLoading: false
             };
     }
 
