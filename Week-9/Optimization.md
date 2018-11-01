@@ -58,7 +58,11 @@ Our `serve` web-server could not help us with data compression, so we have to ad
 nginx -c "nginx.conf"
 ```
 
+Aaaand
 
+![](/images/with_gzip.png)
+
+Yeah, 83 percents on performance. Nice.
 
 
 
