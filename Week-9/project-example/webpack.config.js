@@ -15,7 +15,7 @@ module.exports = {
         app: ["./src/index.jsx"]
     },
     output: {
-        path: path.join(__dirname, outputDirectory),
+        path: outputDirectory,
         filename: "[name].js"
     },
     module: {
