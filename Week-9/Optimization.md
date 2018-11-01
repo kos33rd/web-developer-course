@@ -65,6 +65,29 @@ Aaaand
 Yeah, 83 percents on performance. Nice.
 
 
+### Caching
+
+```
+http {
+    server {
+        gzip        on;
+        gzip_comp_level 7;
+        gzip_types    text/plain application/javascript application/x-javascript text/javascript text/xml text/css;
+
+        listen      5000;
+        root        ./dist;
+        location / {
+            expires 1y;
+            try_files $uri $uri/ /index.html;
+        }
+    }
+}
+
+```
+
+![](/images/with_caching.png)
+
+
 
 
 

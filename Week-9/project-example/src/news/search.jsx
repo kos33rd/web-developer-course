@@ -12,12 +12,13 @@ const AdaptedTextField = ({input: {value, onChange}, ...custom}) => (
     <TextField
         value={value}
         onChange={onChange}
+        inputProps={{label: custom.label}}
         {...custom}
     />
 );
 
 const Search = () => (
-    <form>
+    <form >
         <Field component={AdaptedTextField} name="page" label="Начать со страницы" margin="normal"/>
     </form>
 );
