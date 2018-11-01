@@ -88,9 +88,20 @@ http {
 ![](/images/with_caching.png)
 
 
+### Accessibility section
 
+```javascript
+const AdaptedTextField = ({input: {value, onChange}, ...custom}) => (
+    <TextField
+        value={value}
+        onChange={onChange}
+        inputProps={{label: custom.label}}  // set label attribute on html <input> tag
+        {...custom}
+    />
+);
+```
 
-
+![](/images/accessibility_update.png)
 
 
 
