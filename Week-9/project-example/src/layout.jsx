@@ -17,10 +17,10 @@ const LayoutComponent = ({match, newsCount}) => (
                 <Typography variant="title" color="inherit" style={{flexGrow: 1}}>
                     Project-example
                 </Typography>
-                <Button variant="contained" color="secondary" component={Link} to="/about">
+                <Button variant="contained" component={Link} to="/about">
                     О проекте
                 </Button>
-                <Button variant="contained" color="secondary" component={Link} to="/news">
+                <Button variant="contained" component={Link} to="/news">
                     {`Новости (${newsCount})`}
                 </Button>
             </Toolbar>
