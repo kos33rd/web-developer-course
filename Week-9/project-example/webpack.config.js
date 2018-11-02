@@ -1,7 +1,8 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
-const webpack = require("webpack")
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const webpack = require("webpack");
 
 const outputDirectory = path.join(__dirname, 'dist');
 
@@ -55,7 +56,8 @@ module.exports = {
         }),
         new webpack.DefinePlugin({
           BACKEND_URL: `"${process.env.BACKEND_URL}"`
-        })
+        }),
+        new CopyWebpackPlugin([{from: 'stub/assets/*.*', to: '', flatten: true} ])
     ],
     devServer: {
         contentBase: outputDirectory,
