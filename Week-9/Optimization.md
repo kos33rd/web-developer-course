@@ -105,6 +105,26 @@ const AdaptedTextField = ({input: {value, onChange}, ...custom}) => (
 
 
 
+## Back to performance
+
+### Generate self-signed SSL certificate
+
+```sh
+cd ~/nginx/ssl
+openssl req -x509 -nodes -days 365 -newkey rsa:4086 -nodes -keyout domain.key -out domain.crt
+openssl dhparam -out dhparam.pem 4096
+
+```
+
+
+
+
+
+
+
+
+
+
 
 
 

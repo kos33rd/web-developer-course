@@ -12,7 +12,7 @@ const AdaptedTextField = ({input: {value, onChange}, ...custom}) => (
     <TextField
         value={value}
         onChange={onChange}
-        inputProps={{label: custom.label}}
+        inputProps={{'aria-label': custom.label}}
         {...custom}
     />
 );
