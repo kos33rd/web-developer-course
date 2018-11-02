@@ -2,14 +2,14 @@
 
 ## Firstly we'll make an audit of our current application without any optimizations with chrome dev-tools and lighthouse.
 
-![Audit settings](/images/audit_settings.png)
+![Audit settings](./images/audit_settings.png)
 
 
 Results:
-![Initial application audit results](/images/before_optimization.png)
+![Initial application audit results](./images/before_optimization.png)
 
 Recommendations:
-![Initial application audit recommendations](/images/before_optimization_recommendations.png)
+![Initial application audit recommendations](./images/before_optimization_recommendations.png)
 
 
 ### Bundle compilation
@@ -29,11 +29,11 @@ serve -s
 ```
 
 Now let's take another audit run:
-![Application audit after build](/images/after_serve.png)
+![Application audit after build](./images/after_serve.png)
 
 
 Something wrong with this
-![](/images/hmm.jpg)
+![](./images/hmm.jpg)
 
 
 We just built and served our develop bundle but only with another web server.
@@ -44,7 +44,7 @@ npm run prod
 ```
 
 
-![](/images/after_prod.png)
+![](./images/after_prod.png)
 
 Ah, some progress. 
 
@@ -60,7 +60,7 @@ nginx -c "nginx.conf"
 
 Aaaand
 
-![](/images/with_gzip.png)
+![](./images/with_gzip.png)
 
 Yeah, 83 percents on performance. Nice.
 
@@ -85,7 +85,7 @@ http {
 
 ```
 
-![](/images/with_caching.png)
+![](./images/with_caching.png)
 
 
 ### Accessibility section
@@ -101,7 +101,7 @@ const AdaptedTextField = ({input: {value, onChange}, ...custom}) => (
 );
 ```
 
-![](/images/accessibility_update.png)
+![](./images/accessibility_update.png)
 
 
 
