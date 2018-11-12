@@ -48,23 +48,23 @@ The course will provide an opportunity for participants to:
 
 
 * Introduction: [Presentation](https://docs.google.com/presentation/d/1nYe-BU0EQpTiza4mgTOB_ocH_y83cLOWodIGb4PAfgM/edit?usp=sharing)
-* Week-1: [Presentation](https://docs.google.com/presentation/d/1clePaQO8jDPILYStJ0EAibZAk17yEZFUHsKOpmdWkTc/edit?usp=sharing) / [Workshop](https://github.com/kos33rd/web-developer-course/blob/master/Week-1.MD)
-* Week-2: [Presentation](https://docs.google.com/presentation/d/1ur7ZzxWZS3FU_GZMPPMmLKDgGdN7ykUoQhPQl9hBR4E/edit?usp=sharing) / [Workshop](https://github.com/kos33rd/web-developer-course/blob/master/Week-2.MD)
-* Week-3: [Presentation](https://docs.google.com/presentation/d/1HFH0PU0v89TZ1MJ0U18A9Qy6STrPGsdxoyd51pfjxtA/edit?usp=sharing) / [Workshop](https://github.com/kos33rd/web-developer-course/tree/master/Week-3/project-example)
-* Week-4: [Presentation](https://docs.google.com/presentation/d/1zNIwCQwZ9TgpinUE18180b7Z1i49gF1LVJuWYTuQ9fU/edit?usp=sharing) / [Workshop](https://github.com/kos33rd/web-developer-course/tree/master/Week-4/project-example)
-* Week-5: [Presentation](https://docs.google.com/presentation/d/1PjzM3CLyYgyuY35enC5ANLmwBLGhEHwhQI5V2Xi8VJE/edit?usp=sharing) / [Workshop](https://github.com/kos33rd/web-developer-course/blob/master/Week-5/Workshop.md) / [Project example](https://github.com/kos33rd/web-developer-course/tree/master/Week-5/project-example)
+* Week-1: [Presentation](https://docs.google.com/presentation/d/1clePaQO8jDPILYStJ0EAibZAk17yEZFUHsKOpmdWkTc/edit?usp=sharing) / [Workshop](./Week-1.MD)
+* Week-2: [Presentation](https://docs.google.com/presentation/d/1ur7ZzxWZS3FU_GZMPPMmLKDgGdN7ykUoQhPQl9hBR4E/edit?usp=sharing) / [Workshop](./Week-2.MD)
+* Week-3: [Presentation](https://docs.google.com/presentation/d/1HFH0PU0v89TZ1MJ0U18A9Qy6STrPGsdxoyd51pfjxtA/edit?usp=sharing) / [Workshop](./Week-3/project-example)
+* Week-4: [Presentation](https://docs.google.com/presentation/d/1zNIwCQwZ9TgpinUE18180b7Z1i49gF1LVJuWYTuQ9fU/edit?usp=sharing) / [Workshop](./Week-4/project-example)
+* Week-5: [Presentation](https://docs.google.com/presentation/d/1PjzM3CLyYgyuY35enC5ANLmwBLGhEHwhQI5V2Xi8VJE/edit?usp=sharing) / [Workshop](./Week-5/Workshop.md) / [Project example](./Week-5/project-example)
 * Week-6: 
 
-* Week-7: [Workshop](https://github.com/kos33rd/web-developer-course/blob/master/Week-7/Workshop.md) / [Project example](https://github.com/kos33rd/web-developer-course/tree/master/Week-7/project-example)
-* Week-8: [Project example](https://github.com/kos33rd/web-developer-course/tree/master/Week-8/project-example)
-* Week-9: [Workshop](https://github.com/kos33rd/web-developer-course/blob/master/Week-9/Optimization.md) / [Project example](https://github.com/kos33rd/web-developer-course/tree/master/Week-9/project-example)
+* Week-7: [Workshop](./Week-7/Workshop.md) / [Project example](./Week-7/project-example)
+* Week-8: [Project example](./Week-8/project-example)
+* Week-9: [Workshop](./Week-9/Optimization.md) / [Project example](./Week-9/project-example)
 
 
 ## Course project
 
 Each student have to make a choise regarding the course project. The project is a full-fledged web application that includes all the technologies and practices obtained in the current course. 
 
-Course project desctription, requirements and examples are available on a [dedicated page](https://github.com/kos33rd/web-developer-course/blob/master/Course-Projects.MD).
+Course project desctription, requirements and examples are available on a [dedicated page](./Course-Projects.MD).
 
 
 ### Assignments and Collaboration
