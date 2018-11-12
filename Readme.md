@@ -1,5 +1,7 @@
 # Enterprise JavaScript Development
 
+![Course logo](./common/course_logo.png)
+
 This repository contains documentation, materials and code examples on JavaScript for Enterprise Development course offered by Lobov Konstantin and Vlasov Andrey for Innopolis University students.
 
 
@@ -62,7 +64,7 @@ The course will provide an opportunity for participants to:
 
 Each student have to make a choise regarding the course project. The project is a full-fledged web application that includes all the technologies and practices obtained in the current course.
 
-Course project desctription, requirements and examples are available on a [dedicated page](https://github.com/kos33rd/web-developer-course/blob/master/Course-Projects.MD)
+Course project desctription, requirements and examples are available on a [dedicated page](https://github.com/kos33rd/web-developer-course/blob/master/Course-Projects.MD).
 
 
 ### Assignments and Collaboration
