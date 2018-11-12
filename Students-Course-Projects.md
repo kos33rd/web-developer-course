@@ -28,6 +28,13 @@
 
 -----
 
+### Logistics company administration portal
+![](./common/course-project-examples/10.png)
+
+![](./common/course-project-examples/11.png)
+
+-----
+
 ### Weather finder
 ![](./common/course-project-examples/7.png)
 
@@ -35,3 +42,8 @@
 
 ### Telegram Bot admin panel
 ![](./common/course-project-examples/8.png)
+
+-----
+
+### Nearby ATM search app
+![](./common/course-project-examples/9.png)
