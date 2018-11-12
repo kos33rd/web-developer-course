@@ -62,7 +62,7 @@ The course will provide an opportunity for participants to:
 
 ## Course project
 
-Each student have to make a choise regarding the course project. The project is a full-fledged web application that includes all the technologies and practices obtained in the current course. 
+Each student have to make a choise regarding the course project. A project is a full-fledged web application that includes all the technologies and practices obtained in the current course. 
 
 Course project desctription, requirements and examples are available on a [dedicated page](./Course-Projects.MD).
 
@@ -70,4 +70,11 @@ Course project desctription, requirements and examples are available on a [dedic
 ### Assignments and Collaboration
 
 We encourage vigorous discussion and cooperation in this class. You should feel free to discuss any aspects of the class with any classmates and review your classmates progress and achievements. However, we insist that any coded material that is not specifically designated as a Team Deliverable be done by you alone. This includes individual reports associated with assignments, and course project assignments. We also insist that if you include verbatim text from any source, you clearly indicate it using standard conventions of quotation or indentation and a note to indicate the source. Moreover, we would like you to pay attention and respect all licensing policies of third-party software that you will use in your assignments and course project.
+
+### Hall of Fame
+
+We also have a [special page](./Students-Course-Projects.md) containing presentation of course projects completed by this course students.
+
+
+
 
