@@ -47,3 +47,17 @@
 
 ### Nearby ATM search app
 ![](./common/course-project-examples/9.png)
+
+-----
+
+### Cultural events search app
+![](./common/course-project-examples/12.png)
+
+![](./common/course-project-examples/13.png)
+
+-----
+
+### Cryptocurrency tracker
+![](./common/course-project-examples/14.png)
+
+![](./common/course-project-examples/15.png)
