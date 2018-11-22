@@ -48,7 +48,7 @@ The course will provide an opportunity for participants to:
 
 
 * Introduction: [Presentation](https://docs.google.com/presentation/d/1nYe-BU0EQpTiza4mgTOB_ocH_y83cLOWodIGb4PAfgM/edit?usp=sharing)
-* Week-1: [Presentation](https://docs.google.com/presentation/d/1clePaQO8jDPILYStJ0EAibZAk17yEZFUHsKOpmdWkTc/edit?usp=sharing) / [PDF](./pdf/JavaScript-for-Enterprise Development-Week-1.pdf) /  [Workshop](./Week-1.MD)
+* Week-1: [Presentation](https://docs.google.com/presentation/d/1clePaQO8jDPILYStJ0EAibZAk17yEZFUHsKOpmdWkTc/edit?usp=sharing) / [PDF](./pdf/JavaScript-for-Enterprise-Development-Week-1.pdf) /  [Workshop](./Week-1.MD)
 * Week-2: [Presentation](https://docs.google.com/presentation/d/1ur7ZzxWZS3FU_GZMPPMmLKDgGdN7ykUoQhPQl9hBR4E/edit?usp=sharing) / [PDF](./pdf/JavaScript-for-Enterprise-Development-Week-2.pdf) / [Workshop](./Week-2.MD)
 * Week-3: [Presentation](https://docs.google.com/presentation/d/1HFH0PU0v89TZ1MJ0U18A9Qy6STrPGsdxoyd51pfjxtA/edit?usp=sharing) / [PDF](./pdf/JavaScript-for-Enterprise-Development-Week-3.pdf) [Workshop](./Week-3/project-example)
 * Week-4: [Presentation](https://docs.google.com/presentation/d/1zNIwCQwZ9TgpinUE18180b7Z1i49gF1LVJuWYTuQ9fU/edit?usp=sharing) / [PDF](./pdf/JavaScript-for-Enterprise-Development-Week-4.pdf) / [Workshop](./Week-4/project-example)
